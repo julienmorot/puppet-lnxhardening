@@ -23,7 +23,6 @@ class lnxhardening::sshd {
         mode => "0644",
     }
 
-
     package { 'openssh-server':
         ensure=>'installed',
     }
@@ -33,7 +32,5 @@ class lnxhardening::sshd {
         enable => true,
         require => Package['openssh-server'],
     }
-
-
 }
 

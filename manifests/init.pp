@@ -43,5 +43,9 @@
 # Copyright 2018 Your name here, unless otherwise noted.
 #
 class lnxhardening {
-
+    include lnxhardening::apparmor
+    include lnxhardening::sshd
+    include lnxhardening::kernel
+    include lnxhardening::usbstorage
+    include lnxhardening::updates
 }
