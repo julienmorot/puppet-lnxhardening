@@ -34,9 +34,6 @@ class lnxhardening::kernel {
     sysctl { 'net.ipv4.conf.default.accept_redirects': value => '0' }
     sysctl { 'net.ipv6.conf.default.accept_redirects': value => '0' }
 
-    # Enable Exec Shield
-    sysctl { 'kernel.exec-shield': value => '1' }
-
     # Enable randomized Virtual Memory Region Placement
     sysctl { 'kernel.randomize_va_space': value => '2' }
 

@@ -18,7 +18,7 @@ class lnxhardening::sshd {
     file { '/etc/issue.net':
         ensure  => file,
         source => "puppet:///modules/lnxhardening/issue.net",
-        user => "root",
+        owner => "root",
         group => "root",
         mode => "0644",
     }
