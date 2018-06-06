@@ -13,12 +13,6 @@ class lnxhardening::kernel {
     # Ignore ICMP broadcast requests
     sysctl { 'net.ipv4.icmp_echo_ignore_broadcasts': value => '1' }
 
-    # Ignore source packet routing
-    sysctl { 'net.ipv4.conf.all.accept_source_route': value => '0' }
-    sysctl { 'net.ipv6.conf.all.accept_source_route': value => '0' }
-    sysctl { 'net.ipv4.conf.default.accept_source_route': value => '0' }
-    sysctl { 'net.ipv6.conf.default.accept_source_route': value => '0' }
-
     # Ignore send redirects
     sysctl { 'net.ipv4.conf.all.send_redirects': value => '0' }
     sysctl { 'net.ipv4.conf.default.send_redirects': value => '0' }
