@@ -21,13 +21,6 @@ class lnxhardening::updates {
         group => "root",
         mode => "0644",
     }
-    file { '/etc/apt/apt.conf.d/20auto-upgrades':
-        ensure  => file,
-        source => "puppet:///modules/lnxhardening/20auto-upgrades",
-        owner => "root",
-        group => "root",
-        mode => "0644",
-    }
 }
 
 
