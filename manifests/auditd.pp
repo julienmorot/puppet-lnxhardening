@@ -11,6 +11,7 @@ class lnxhardening::auditd {
                 ensure => file,
                 require => Package['auditd'],
                 source => "puppet:///modules/lnxhardening/audit.rules",
+				notify => Service['auditd'],
         }
 
 }

@@ -7,6 +7,14 @@ class lnxhardening::sshd {
         append_on_no_match => true,
     }
 
+    file_line { 'sshd_x11forwarding':
+        ensure => present,
+        path => '/etc/ssh/sshd_config',
+        match => '^X11Forwarding yes',
+        line => 'X11Forwarding no',
+        append_on_no_match => true,
+    }
+
     file_line { 'sshd_banner':
         ensure => present,
         path => '/etc/ssh/sshd_config',
@@ -27,7 +35,7 @@ class lnxhardening::sshd {
         ensure=>'installed',
     }
 
-    service { 'ssh':
+    service { "ssh":
         ensure => running,
         enable => true,
         require => Package['openssh-server'],
