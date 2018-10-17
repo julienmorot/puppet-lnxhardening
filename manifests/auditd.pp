@@ -10,7 +10,7 @@ class lnxhardening::auditd {
         file { '/etc/audit/rules.d/audit.rules':
                 ensure => file,
                 require => Package['auditd'],
-                source => "puppet:///modules/lnxhardening/audit.rules",
+                source => "puppet:///modules/${module_name}/audit.rules",
 				notify => Service['auditd'],
         }
 
