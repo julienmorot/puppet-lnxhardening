@@ -49,4 +49,5 @@ class lnxhardening {
     include lnxhardening::usbstorage
     include lnxhardening::updates
     include lnxhardening::rsyslog
+    include lnxhardening::accounts
 }
