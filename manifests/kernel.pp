@@ -37,6 +37,15 @@ class lnxhardening::kernel {
     # Enable randomized Virtual Memory Region Placement
     sysctl { 'kernel.randomize_va_space': value => '2' }
 
+    # Forbid soft/hard link to files user do not own
+    sysctl { 'fs.protected_symlinks': value => '1' }
+    sysctl { 'fs.protected_hardlinks': value => '1' }
+
+    # dmesg only accessible by root
+    sysctl { 'kernel.dmesg_restrict': value => '1' }
+
+    # kernel pointer protection
+    sysctl { 'kernel.kptr_restrict': value => '1' }
 
     # Restrict core dumps
     file_line { 'limits_hard_core':
