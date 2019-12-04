@@ -1,2 +1,2 @@
-readonly TMOUT=900
+#readonly TMOUT=900
 #readonly HISTFILE
